@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+</head>
+<body>
+    <form method="post" action="includes/signup-inc.php"> 
+        <h3>Sign Up</h3>
+        <div>
+            <label for="">Enter Your Email:</label>
+            <input type="Email" name="Email" placeholder="@gmail.com"  value="@gmail.com"  required>
+        </div>
+          <div>
+               <label for="">Enter Your Name:</label>
+               <input type="text" name="User_Name" placeholder="User Name"  required>
+           </div>
+           <div>
+               <label for=""> Create Your Password:</label>
+               <input type="password" name="Password1" id="Password1" placeholder="write 1..2,A..Z,@.#" >
+           </div>
+           <div>
+            <label for=""> Repeat Your Password:</label>
+            <input type="password" name="Password2"  id="Password2" placeholder="write 1..2,A..Z,@.#" >
+           </div>
+           <div>
+            <input type="submit"  name ="submit" value="Sign Up" id="send">
+        </div>
+        <div class="log">
+            <p>have an account already?</p>
+            <a  class="sign" href="loginb.html">login</a>
+          </div>
+     </form>
+     <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        form {
+            border: 2px solid black;
+            border-radius: 3px;
+            padding: 20px 10px 20px 10px ;
+        }
+        form:hover {
+            box-shadow: 3px 3px 3px black;
+        }
+        h3 {
+            text-align: center;
+            font-size: xx-large ;
+        }
+        form  input {
+            margin: 6px;
+        }
+        form input:hover {
+            background-color: black;
+            color: white;
+            transition: 0.5s;
+        }
+        #send {
+            background-color: black;
+            color: white;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+        p {
+            text-align: center;
+            margin-top: -40px;
+            margin-right: -49px;
+        }
+        a {
+                position: relative;
+                top: 19%;
+                text-decoration: none;
+                color: black;
+            }
+        .sign {
+                float: right;
+                font-weight: 900;
+                text-transform: uppercase;
+                margin-top: -35px;
+                margin-right: 15px;
+            }
+     </style>
+</body>
+</html>
