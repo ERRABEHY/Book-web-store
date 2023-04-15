@@ -89,15 +89,21 @@
           <?php
               require "includes/data.php";
               
-              $sql="SELECT Photo,Products FROM materiel ORDER BY ID DESC ";
+              $sql="SELECT ID,Photo,Products FROM materiel ORDER BY ID DESC ";
               $query=mysqli_query($connect, $sql);
               while($row=mysqli_fetch_assoc($query)){
                 $photo=$row['Photo'];
                 $name=$row['Products'];
+                // $_SESSION['id']=$row['ID'];
+                // echo $_SESSION['id'];
+
                 ?>
                 <div >
+
+                  <a href="book_detail.php?id=<?php echo $row['ID'] ?>" >
                     <img class="imagebook" src="images/<?php echo $photo ?>" alt="error from fileimages">
                      <p ><?php echo $name ?></p>
+                     </a>
                 </div>
                <?php
               }

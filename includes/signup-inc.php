@@ -48,6 +48,7 @@ if (isset($_POST['submit'])) {
                     mysqli_stmt_bind_param($stmt, "sss",$Email, $username, $hashedPass);
                     mysqli_stmt_execute($stmt);
                     $_SESSION['userpage']='';
+                    $_SESSION['sessionUser'] = $row['username'];
 
                         header("Location: ../indexe.php?succes=registered");
                         exit();
