@@ -86,16 +86,23 @@
         <div class="col">
           <!-- Start Service -->
           <div class="srv">
-            <?php
+          <?php
               require "includes/data.php";
               
-              $sql="SELECT Photo FROM materiel WHERE Qty > 0 ";
+              $sql="SELECT Photo,Products FROM materiel ORDER BY ID DESC ";
               $query=mysqli_query($connect, $sql);
-              $row=mysqli_fetch_assoc($query);
-              $photo=$row['Photo'];
+              while($row=mysqli_fetch_assoc($query)){
+                $photo=$row['Photo'];
+                $name=$row['Products'];
+                ?>
+                <div >
+                    <img class="imagebook" src="images/<?php echo $photo ?>" alt="error from fileimages">
+                     <p ><?php echo $name ?></p>
+                </div>
+               <?php
+              }
               ?>
-               <img src="<?php ?>" alt="">
-          </div>
+              </div>
           <!-- <div class="srv">
            <div>
             <a href="book_details/48laws.php">

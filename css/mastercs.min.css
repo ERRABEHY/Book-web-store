@@ -258,6 +258,7 @@
   }
   .srv p {
     font-size: larger;
+    text-transform: uppercase;
     color: black;
     
   }

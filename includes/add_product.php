@@ -2,13 +2,25 @@
 require "data.php";
 
 if (isset($_POST['ADD']) && !empty($_FILES['Photo'])) {
-    $photo= file_get_contents($_FILES['Photo']['tmp_name']);
-    $image_type = $_FILES['image']['type'];
+
+    print_r($_FILES['Photo']);
+    
+    $image_type = $_FILES['Photo']['type'];
+    $image_name = $_FILES['Photo']['name'];
+    $image_tmpName = $_FILES['Photo']['tmp_name'];
     $name=$_POST['name'];
     $Author=$_POST['Author'];
     $description=$_POST['description'];
     $Price=$_POST['Price'];
     $Quantity=$_POST['Quantity'];
+
+    $imageextension=explode('.',$image_name);
+    $imageextension=strtolower(end($imageextension));
+
+    $ourimage=uniqid();
+    $ourimage='.'.$ourimage;
+    move_uploaded_file($image_tmpName,'../images/'.$ourimage);
+
 
     $sql="SELECT * FROM materiel WHERE Products=?";
     $stmt=mysqli_stmt_init($connect);
@@ -32,7 +44,7 @@ if (isset($_POST['ADD']) && !empty($_FILES['Photo'])) {
                 header("location:add_edit_del.php?error=sqlerror2");
                 exit();
             }else{
-                mysqli_stmt_bind_param($stmt,"ssssss", $name, $Author, $description, $Price, $photo, $Quantity);
+                mysqli_stmt_bind_param($stmt,"ssssss", $name, $Author, $description, $Price, $ourimage, $Quantity);
                 mysqli_stmt_execute($stmt);
                 header("location:../administrator.php?success");
 
