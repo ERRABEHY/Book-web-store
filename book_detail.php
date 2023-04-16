@@ -92,79 +92,7 @@ $sql="SELECT * FROM materiel  WHERE ID = $var";
         box-sizing: border-box;
         font-family: "Work Sans", sans-serif;
     }
-    .products {
-      margin-bottom: 20px;
-    }
-    .products .container {
-        max-width: 75%;
-        margin: auto;
-        margin-top: 5%;
-        background-color: white;
-		box-shadow: 3px 3px 15px 5px black;
-        display: flex;
-        justify-content: space-between;
-
-    }
-    .side,.imagebook {
-        width: 50%;
-    } 
-    .container img {
-        margin: 0px;
-        width: 100%;
-       
-    } 
-    .side{
-        padding: 16px;
-        margin: 30px 20px  ;
-    }
-
-.products .container h1 {
-        color: black;
-        font-size: xx-large;
-        text-transform: uppercase;
-        margin:  10px   10px  10px  0px;
-     }
-     .products .container h6 {
-        margin: 3px 3px 10px 0px;
-        font-size: 15px;
-        color: #454545;
-        opacity: 0.7;
-     }
-     .products .container h2 {
-        margin: 20px 20px 20px 0px;
-        color: var(--main-color);
-        font-size: 40px;
-     }
-     #nbr {
-        margin-left: 5px;
-        width: 40px;
-        height: 40px;
-        padding: 0px;
-     }
-
-     button {
-        margin: 20px 20px 20px 0px;
-        border-radius: 20px;
-        width: 150px;
-        height: 40px;
-        background-color: var(--secondary-color);
-        color: var(--main-color);
-        border: 0px;
-     }
-     button:hover {
-        background-color: var(--main-color);
-        color: var(--secondary-color);
-        box-shadow: 0 0 5px var(--main-color),
-              0 0 25px var(--main-color),
-              0 0 50px var(--main-color);
-     }
-
-    .description {
-        margin: 5px 5px 5px 0px ;
-        line-height: 30px;
-        opacity: 0.7;
-        
-     }
+ 
  /* Start Header */
  :root {
     --main-color: #10cab7;
@@ -300,6 +228,133 @@ $sql="SELECT * FROM materiel  WHERE ID = $var";
     }
   }
   /* End Header */
+  .products {
+      margin-bottom: 20px;
+    }
+    .products .container {
+        max-width: 75%;
+        margin: auto;
+        margin-top: 5%;
+        background-color: white;
+		    box-shadow: 3px 3px 15px 5px black;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .side,.imagebook {
+        width: 50%;
+    } 
+    .container img {
+        margin: 0px;
+        width: 100%;
+       
+    } 
+    .side{
+        padding: 16px;
+        margin: 30px 20px  ;
+    }
+
+.products .container h1 {
+        color: black;
+        font-size: xx-large;
+        text-transform: uppercase;
+        margin:  10px   10px  10px  0px;
+     }
+     .products .container h6 {
+        margin: 3px 3px 10px 0px;
+        font-size: 15px;
+        color: #454545;
+        opacity: 0.7;
+     }
+     .products .container h2 {
+        margin: 20px 20px 20px 0px;
+        color: var(--main-color);
+        font-size: 40px;
+     }
+     #nbr {
+        margin-left: 5px;
+        width: 40px;
+        height: 40px;
+        padding: 0px;
+     }
+
+     button {
+        margin: 20px 20px 20px 0px;
+        border-radius: 20px;
+        width: 150px;
+        height: 40px;
+        background-color: var(--secondary-color);
+        color: var(--main-color);
+        border: 0px;
+     }
+     button:hover {
+        background-color: var(--main-color);
+        color: var(--secondary-color);
+        box-shadow: 0 0 5px var(--main-color),
+              0 0 25px var(--main-color),
+              0 0 50px var(--main-color);
+     }
+
+    .description {
+        margin: 5px 5px 5px 0px ;
+        line-height: 30px;
+        opacity: 0.7;
+        
+     }
+     @media (max-width: 767px) {
+      .products {
+      margin-bottom: 10px;
+    }
+    .products .container {
+        max-width: 75%;
+        margin-top: 5%;
+        background-color: white;
+		    box-shadow: 3px 3px 15px 5px black;
+    }
+      .side{
+        padding: 10px;
+        margin: 10px 5px ;
+      }
+      .products .container h1 {
+        color: black;
+        font-size: large;
+        text-transform: uppercase;
+        margin:  0px   8px  8px  0px;
+     }
+     .products .container h6 {
+        margin: 3px 3px 10px 0px;
+        font-size: 12px;
+        color: #454545;
+        opacity: 0.7;
+     }
+     .products .container h2 {
+        margin: 10px 10px 10px 0px;
+        color: var(--main-color);
+        font-size: 30px;
+     }
+     #nbr {
+        margin-left: 5px;
+        width: 40px;
+        height: 40px;
+        padding: 0px;
+     }
+     button {
+        margin: 20px 20px 20px 0px;
+        border-radius: 20px;
+        width: 120px;
+        height: 30px;
+        background-color: var(--secondary-color);
+        color: var(--main-color);
+        border: 0px;
+     }
+     .description {
+        margin: 5px 5px 5px 0px ;
+        line-height: 16px;
+        opacity: 0.7;
+        
+     }
+    }
+     
     /* Start Footer */
   .footer {
     margin-top: 10px;

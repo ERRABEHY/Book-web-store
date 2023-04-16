@@ -152,24 +152,24 @@
       <p>If you do it right, it will last forever.</p>
       <div class="portfolio-content">
         <div class="card">
-          <img decoding="async" src="images/portfolio-1.jpg" alt="" />
+          <img decoding="async" src="images/events.jpg" alt="" />
           <div class="info">
-            <h3>Project Here</h3>
-            <p>My creative ability is very difficult to measure because it can manifest in so many surprising and.</p>
+            <h3>Events</h3>
+            <p>The events could be organized by date or by theme, such as author events, book clubs, or literary festivals.</p>
           </div>
         </div>
         <div class="card">
-          <img decoding="async" src="images/portfolio-2.jpg" alt="" />
+          <img decoding="async" src="images/team.jpg" alt="" />
           <div class="info">
-            <h3>Project Here</h3>
-            <p>My creative ability is very difficult to measure because it can manifest in so many surprising and.</p>
+            <h3>Team</h3>
+            <p>behind-the-scenes glimpses of the store, we have a good team for working in perfect aspects to develope access of our client and the teamwork consist of 3 members. </p>
           </div>
         </div>
         <div class="card">
-          <img decoding="async" src="images/portfolio-3.jpg" alt="" />
+          <img decoding="async" src="images/from.jpg" alt="" />
           <div class="info">
-            <h3>Project Here</h3>
-            <p>My creative ability is very difficult to measure because it can manifest in so many surprising and.</p>
+            <h3>From Us</h3>
+            <p>Welcome to our bookstore! We're a small but passionate team of book lovers.  </p>
           </div>
         </div>
       </div>
@@ -187,14 +187,11 @@
         </div>
         <div class="text">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nemo neque voluptate tempora velit cum non,
-            fuga vitae architecto delectus sed maxime rerum impedit aliquam obcaecati, aut excepturi iusto laudantium!
+          Bookstore Online is an e-commerce platform that allows customers to browse, purchase, and download books online. The platform features a wide variety of books, including new releases, bestsellers, and classic literature. Customers can create an account, search for books, read book descriptions and reviews, and purchase books using a secure online payment system. Once purchased, books can be downloaded directly to the customer's device in a variety of formats.
           </p>
           <hr />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, sapiente. Velit iure exercitationem
-            dolores nesciunt dolore. Eum officiis dolorum hic voluptate quaerat minima, similique inventore esse,
-            alias, sed quo officia?
+          Bookstore Online targets book lovers of all ages and interests, who are looking for a convenient and secure way to purchase and download books online. The platform appeals to busy professionals, students, and anyone who enjoys reading on-the-go.
           </p>
         </div>
       </div>
@@ -208,7 +205,7 @@
       <p>We are born to create</p>
       <div class="info">
         <p class="label">Feel free to drop us a line at:</p>
-        <a href="mailto:leonagency@mail.com?subject=Contact" class="link">leonagency@mail.com</a>
+        <a href="mailto:contact@bookstore.com?subject=Contact" class="link">contact@bookstore.com</a>
         <div class="social">
           Find Us On Social Networks
           <i class="fab fa-youtube"></i>
@@ -220,7 +217,7 @@
   </div>
   <!-- End Contact -->
   <!-- Start Footer -->
-  <div class="footer">&copy; 2021 <span>Leon</span> All Right Reserved</div>
+  <div class="footer">&copy; 2023 <span>bookstore</span> All Right Reserved</div>
   <!-- End Footer -->
 </body>
 </html>
