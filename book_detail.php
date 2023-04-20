@@ -54,7 +54,7 @@ $sql="SELECT * FROM materiel  WHERE ID = $var";
                <img src="images/<?php echo $row['Photo'] ?>" alt="">
             </div>
                <div class="side">
-               <form action="includes/48laws-inc.php" method="post" >
+               <form action="includes/insert_request.php" method="post" >
                   <h1><?php echo  $row['Products'] ?></h1>
                     <input type="hidden" name="Product" value="<?php echo $row['Products']?>" >
                     <h6> by <?php echo  $row['Authors'] ?></h6>
@@ -69,7 +69,7 @@ $sql="SELECT * FROM materiel  WHERE ID = $var";
         </div>
         </div>
         <!-- Start Footer -->
-  <div class="footer">&copy; 2021 <span>Leon</span> All Right Reserved</div>
+  <div class="footer">&copy; 2021 <span>bookstore</span> All Right Reserved</div>
   <!-- End Footer -->
     
       <!-- end product -->
@@ -79,11 +79,11 @@ $sql="SELECT * FROM materiel  WHERE ID = $var";
 
    ?>
 <script>
-     	// function addToCart() {
-		// 	if (confirm("Do you want to continue ?")) {
-		// 		window.location.href = "../validation.php";
-		// 	} 
-		// }
+     	function addToCart() {
+			if (confirm("Do you want to continue ?")) {
+				window.location.href = "includes/insert_request.php";
+			} 
+		}
 </script>
 <style>
     *{

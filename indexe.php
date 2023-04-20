@@ -36,6 +36,7 @@
           <?php
           session_start();
           if(isset($_SESSION['userpage'])){
+            echo $_SESSION['sessionUser'];
             echo '<li><a href="validation.php" >Checkout</a></li>';
             echo '<li><a href="logout.php">Logout</a></li>';
           }
@@ -94,9 +95,6 @@
               while($row=mysqli_fetch_assoc($query)){
                 $photo=$row['Photo'];
                 $name=$row['Products'];
-                // $_SESSION['id']=$row['ID'];
-                // echo $_SESSION['id'];
-
                 ?>
                 <div >
 
@@ -108,36 +106,7 @@
                <?php
               }
               ?>
-              </div>
-          <!-- <div class="srv">
-           <div>
-            <a href="book_details/48laws.php">
-              <img class="imagebook" src="images/The 48 Laws of Power.png" alt="imagebook">
-              <p>48 laws for power</p>
-              </a>
-           </div>
-
-            <div>
-              <a href="book_details/THEART.php">
-                <img class="imagebook" src="images/abrief.jpg" alt="imagebook">
-                <p> A brief history of time  </p>
-                </a>
-            </div>
-
-              <div>
-                <a href="book_details/">
-                  <img class="imagebook" src="images/atomichabits.png" alt="imagebook">
-                  <p> Atomic habits </p>
-                  </a>
-              </div>
-              <div>
-                <a href="book_details/">
-                  <img class="imagebook" src="images/Thinking, Fast And Slow.png" alt="imagebook">
-                  <p>Thinking, Fast And Slow</p>
-                  </a>
-              </div>
-          </div>  -->
-          
+              </div>          
         </div>
       </div>
           <!-- End Service -->
@@ -183,7 +152,7 @@
       <p>Less is more work</p>
       <div class="about-content">
         <div class="image">
-          <img decoding="async" src="images/about.jpg" alt="" />
+          <img decoding="async" src="images/book_about.jpg" alt="" />
         </div>
         <div class="text">
           <p>

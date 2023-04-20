@@ -5,43 +5,42 @@
 
 <?php 
 require "includes/data.php";
-
-if (isset($_POST['Add_Product'])) {
-    ?>
-    <form action="includes/add_product.php" method="post" enctype="multipart/form-data" >
-        <div>
-            <label for="Photo">Product Photo:</label>
-            <input type="file" name="Photo" id="Photo" accept="image/*">
-        </div>
-        <div>
-            <label for="name">Product Name:</label>
-            <input type="text" name="name" id="name">
-        </div>
-        <div>
-            <label for="Author">Author Name:</label>
-            <input type="text" name="Author" id="Author">
-        </div>
-        <div>
-            <label for="description">Product description:</label>
-            <input type="text" name="description" id="description">
-        </div>
-        <div>
-            <label for="Price">Product Price:</label>
-            <input type="text" name="Price" id="Price">
-        </div>
-        <div>
-            <label for="Quantity">Product Quantity:</label>
-            <input type="text" name="Quantity" id="Quantity">
-        </div> 
-        <input type="submit" name="ADD" value="ADD" id="send" >
-    </form>
-    <?php 
+if (isset($_POST['del'])) {
+    $Product=$_POST['del'];
+    mysqli_query($connect,"DELETE FROM materiel WHERE Products = '$Product' ");
+    header("location:user.php?id=square");
+}else {
+        ?>
+        <form action="includes/add_product.php" method="post" enctype="multipart/form-data" >
+            <div>
+                <label for="Photo">Product Photo:</label>
+                <input type="file" name="Photo" id="Photo" accept="image/*" require>
+            </div>
+            <div>
+                <label for="name">Product Name:</label>
+                <input type="text" name="name" id="name" require>
+            </div>
+            <div>
+                <label for="Author">Author Name:</label>
+                <input type="text" name="Author" id="Author">
+            </div>
+            <div>
+                <label for="description">Product description:</label>
+                <input type="text" name="description" id="description">
+            </div>
+            <div>
+                <label for="Price">Product Price:</label>
+                <input type="text" name="Price" id="Price" >
+            </div>
+            <div>
+                <label for="Quantity">Product Quantity:</label>
+                <input type="text" name="Quantity" id="Quantity" >
+            </div> 
+            <input type="submit" name="ADD" value="ADD" id="send" >
+        </form>
+        <?php 
 }
-if (isset($_POST['Edit_Product'])) {
-    $sql="SELECT * FROM materiel ";
-    $query=mysqli_query($connect,$sql);
-}
-?>
+    ?>  
 <style>
      body {
                 margin: 0;

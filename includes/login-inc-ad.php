@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
                 } elseif ($password === $row['PASSWORD']) {
                     session_start();
                     $_SESSION['sessionId'] = $row['id'];
-                    $_SESSION['sessionUser'] = $row['USERNAME'];
+                    $_SESSION['sessionuser'] = $row['USERNAME'];
                     header("Location:../administrator.php");
                     exit();
                 } 

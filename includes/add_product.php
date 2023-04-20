@@ -1,9 +1,7 @@
 <?php
 require "data.php";
 
-if (isset($_POST['ADD']) && !empty($_FILES['Photo'])) {
-
-    print_r($_FILES['Photo']);
+if (isset($_POST['ADD']) && !empty($_POST['name'])&& !empty($_FILES['Photo']) ) {
     
     $image_type = $_FILES['Photo']['type'];
     $image_name = $_FILES['Photo']['name'];
@@ -26,7 +24,7 @@ if (isset($_POST['ADD']) && !empty($_FILES['Photo'])) {
     $stmt=mysqli_stmt_init($connect);
     
     if (!mysqli_stmt_prepare($stmt,$sql)) {
-        header("location:add_edit_del.php?error=sqlerror1");
+        header("location:../administrator.php?error=sqlerror");
         exit();
     }else{
         mysqli_stmt_bind_param($stmt,"s",$name);
@@ -35,13 +33,13 @@ if (isset($_POST['ADD']) && !empty($_FILES['Photo'])) {
         $rowcounter=mysqli_stmt_num_rows($stmt);
 
         if ($rowcounter > 0) {
-            header("location:add_edit_del.php?error=sqlerror");
+            header("location:../administrator.php?error=sqlerror");
             exit();
         }else{
             $sql="INSERT INTO materiel (Products, Authors, features, Price, Photo, Qty ) values (?,?,?,?,?,?)";
             $stmt=mysqli_stmt_init($connect);
             if (!mysqli_stmt_prepare($stmt,$sql)) {
-                header("location:add_edit_del.php?error=sqlerror2");
+                header("location:../administrator.php?error=sqlerror2");
                 exit();
             }else{
                 mysqli_stmt_bind_param($stmt,"ssssss", $name, $Author, $description, $Price, $ourimage, $Quantity);
@@ -53,5 +51,7 @@ if (isset($_POST['ADD']) && !empty($_FILES['Photo'])) {
         }
     }
 
+}else{
+    header("location:location:../administrator.php?error=empty filed");
 }
 ?>

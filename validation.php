@@ -11,8 +11,8 @@
       <!-- Start Header -->
   <div class="header">
     <div class="container">
-    <a href="indexe.php"><img decoding="async" class="logo" src="images/logo.png" alt="" /></a>
-      <div class="links">
+    <a href="indexe.php"><img decoding="async" class="logo" src="images/booklogo.png" alt="" /></a>     
+     <div class="links">
         <span class="icon">
           <span></span>
           <span></span>
@@ -30,94 +30,71 @@
     </div>
   </div>
   <!-- End Header -->
-  <?php
-require "includes/data.php";
-
-
-$sql="SELECT * FROM  client_request WHERE boolen='false'";
-$query=mysqli_query($connect,$sql);
-
-while ($row=mysqli_fetch_array($query,MYSQLI_BOTH)) {
-  ?>
   <fieldset>
-  <?php
-  echo $row['Product'] .'<br>'.$row['Quantity'].'<br>';
-  ?>
-<form action="delete.php" method="POST">
-            <input type="hidden" name="Product" value="<?php echo $row['Product']; ?>">
-            <button type="submit" name="delete" >Delete</button>
-            <button type="submit" name="Valide" >Valide</button>
-          </form>
-          
+  <table border="1">
+        <thead >
+           <tr>
+               <td>Nbr</td>
+               <td>Book</td>
+               <td>From</td>
+               <td>Cost</td>
+               <td>For</td>
+               <td>So</td>
+           </tr>
+        </thead>
+        <tbody>
+                <?php
+                  require "includes/data.php";
+                  session_start();
+                  $user=$_SESSION['sessionUser'];
+                  $sql="SELECT * FROM  client_request WHERE boolen='false' AND client='$user'";
+                  $query=mysqli_query($connect,$sql);
+                  $counter=1;
+                  while ($row_request=mysqli_fetch_array($query)){
+                    $book=$row_request['Product'];
+                    $result=mysqli_query($connect,"SELECT price,Authors FROM materiel WHERE Products='$book'");
+                    $row_product=mysqli_fetch_array($result);
+                    $sum=$row_product['price']* $row_request['Quantity'];
+                    ?>
+                    <tr>
+                      <td><?php echo $counter?></td>
+                      <td class="product"><?php echo $row_request['Product']?></td>
+                      <td class="authors">by <?php echo $row_product['Authors']?></td>
+                      <td class="money"><?php echo $sum ?>$</td>
+                      <td><?php echo $row_request['Quantity']?></td>
+                      <td>
+                        <form action="modifiy.php" method="POST">
+                              <input type="hidden" name="Product" value="<?php echo $row_request['Product']; ?>">
+                              <button type="submit" name="delete" >D</button>
+                              <button type="submit" name="Valide" >V</button>
+                            </form>
+                      </td>
+                    </tr>
+                       <?php
+                        $counter++;
+                    }
+                ?>
+        </tbody>
+    </table>
+</div>
 </fieldset>
 <br>
-<!-- onclick="return confirm('Are you sure you want to delete this request?')" -->
-  <?php
-}?>
+
+
   <style>
     /* Start Variables */
     :root {
-    --main-color: #10cab7;
-    --secondary-color: #2c4755;
+      --main-color: #10cab7;
+    --secondary-color: #00FFCA;
     --section-padding: 60px;
     --section-background: #f6f6f6;
     --main-duration: 0.5s;
   }
   /* End Variables */
-  /* Start Global Rules */
-  * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
   body {
     font-family: "Work Sans", sans-serif;
   }
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* Small */
-  @media (min-width: 768px) {
-    .container {
-      width: 750px;
-    }
-  }
-  /* Medium */
-  @media (min-width: 992px) {
-    .container {
-      width: 970px;
-    }
-  }
-  /* Large */
-  @media (min-width: 1200px) {
-    .container {
-      width: 1170px;
-    }
-  }
-  /* End Global Rules */
-  /* Start Components */
-  .special-heading {
-    color: #ebeced;
-    font-size: 100px;
-    text-align: center;
-    font-weight: 800;
-    letter-spacing: -3px;
-    margin: 0;
-  }
-  .special-heading + p {
-    margin: -30px 0 0;
-    font-size: 20px;
-    text-align: center;
-    color: #797979;
-  }
 
-  /* End Components */
  /* Start Header */
   
  .header {
@@ -246,6 +223,43 @@ while ($row=mysqli_fetch_array($query,MYSQLI_BOTH)) {
       border-bottom: 1px solid #ddd;
     }
   }
+  table{
+    width: 100%;
+    text-align: center;
+    border: 0px;
+    border-spacing: 10px;
+}
+.product {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.authors {
+  color: black;
+  opacity: 0.8;
+  font-size: 75%;
+  text-transform: uppercase;
+}
+.money {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+table td {
+    text-align: center;
+    padding: 9px;
+    border: 0px;
+    border-bottom: 1px solid var(--secondary-color);
+    text-transform: uppercase;
+}
+button {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  border: 0px;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
   </style>
 </body>
 </html>
