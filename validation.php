@@ -51,7 +51,7 @@
                   $query=mysqli_query($connect,$sql);
                   $counter=1;
                   while ($row_request=mysqli_fetch_array($query)){
-                    $book=$row_request['Product'];
+                    echo $book=$row_request['Product'];
                     $result=mysqli_query($connect,"SELECT price,Authors FROM materiel WHERE Products='$book'");
                     $row_product=mysqli_fetch_array($result);
                     $sum=$row_product['price']* $row_request['Quantity'];

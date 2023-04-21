@@ -85,6 +85,7 @@ require "includes/data.php";
                             <td>
                                 <?php echo $row['Products']?>
                                 <button id="red" type="submit" name="del" value="<?php echo $row['Products']?>">-</button>
+                                <button id="blue" type="submit" name="modify" value="<?php echo $row['Products']?>">M</button>
                            </td>
                             <td><?php echo $row['price']?>$</td>
                             <td><?php echo $row['Qty']?></td>
@@ -150,6 +151,10 @@ if ($_GET['id']=='triangle') {
     <style>
         #red {
             background-color: red;
+        }
+        #blue {
+            background-color: blue;
+            color: white;
         }
         button {
           background-color: #10cab7;

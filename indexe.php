@@ -36,7 +36,6 @@
           <?php
           session_start();
           if(isset($_SESSION['userpage'])){
-            echo $_SESSION['sessionUser'];
             echo '<li><a href="validation.php" >Checkout</a></li>';
             echo '<li><a href="logout.php">Logout</a></li>';
           }

@@ -51,7 +51,20 @@ if (isset($_POST['ADD']) && !empty($_POST['name'])&& !empty($_FILES['Photo']) ) 
         }
     }
 
-}else{
-    header("location:location:../administrator.php?error=empty filed");
+}elseif(isset($_POST['Modify'])){
+    $name=$_POST['name'];
+    $Author=$_POST['Author'];
+    $description=$_POST['description'];
+    $Price=$_POST['Price'];
+    echo $Quantity=$_POST['Quantity'];
+	mysqli_query($connect,"UPDATE materiel SET 
+     Qty='$Quantity', price='$Price',features='$description',Authors='$Author'
+     WHERE Products ='$name' ");
+    header("location:../administrator.php?success");
+    exit;
+}
+else{
+    header("location:../add_edit_del.php?error=");
+    exit;
 }
 ?>

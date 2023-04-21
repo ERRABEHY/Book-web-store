@@ -18,19 +18,11 @@
           <span></span>
         </span>
         <ul>
-          <li><a href="#Product">Product</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <?php
-          session_start();
-          if(isset($_SESSION['userpage'])){
-            echo '<li><a href="validation.php" >Checkout</a></li>';
-            echo '<li><a href="logout.php">Logout</a></li>';
-          }
-          else { ?>
-          <p class="ad"><a href="logina.html">AD</a></p>
-          <?php } ?>
+        <li><a href="indexe.php">Home</a></li>
+          <li><a href="indexe.php#Product">Product</a></li>
+          <li><a href="indexe.php#portfolio">Portfolio</a></li>
+          <li><a href="indexe.php#about">About</a></li>
+          <li><a href="indexe.php#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -88,35 +80,11 @@
   body {
     font-family: "Work Sans", sans-serif;
   }
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* Small */
-  @media (min-width: 768px) {
-    .container {
-      width: 750px;
-    }
-  }
-  /* Medium */
-  @media (min-width: 992px) {
-    .container {
-      width: 970px;
-    }
-  }
-  /* Large */
-  @media (min-width: 1200px) {
-    .container {
-      width: 1170px;
-    }
-  }
-  /* End Global Rules */
+  
   /* Start Header */
   
    .header {
-    padding: 9px;
+   padding: 20px;
   }
   
   .header .container {
@@ -134,26 +102,8 @@
     display: flex;
     float: right;
   }
-  .header .links ul p {
-    margin-left: 5px;
-    margin-top: -2px;
-    padding: 5px; 
-    border: 5px solid #2c4755 ;
-    background-color: #2c4755 ;
-    border-radius: 19px;
-    text-decoration: none;
-    }
-    .header .links ul p a {
-      padding: 5px;
-      text-decoration: none;
-      color: #10cab7;
-    }
-  .header .links ul .ad:hover {
-    padding: 5px;
-    border: 5px solid aqua ;
-    background-color: aqua ;
-  }
   .header .links ul li a {
+    font-size: 120%;
     margin: 20px;
     color: #10cab7;
     text-decoration: none;
@@ -242,19 +192,41 @@
     }
   }
   /* End Header */
-  .inp {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-  }
-        form {
-            border: 2px solid black;
-            border-radius: 9px;
-            padding: 10px 10px 20px 10px ;
-        }
+  body {
+                
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                
+            }
+            .inp {
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: relative;
+              width: 100%;
+              height: 500px;
+              min-height: 90vh;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            .inp::before {
+              background-image: url(images/bookstore.jpg);
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
+              filter: blur(5px);
+              background-size: cover;
+              background-attachment: fixed;
+            }
+            form {
+                background-color: rgba(131, 139, 146, 0.5);
+                border-radius: 8px;
+                padding: 20px 10px 20px 10px ;
+                border: 2px solid black;
+            }
         form:hover {
             box-shadow: 3px 3px 3px black;
         }

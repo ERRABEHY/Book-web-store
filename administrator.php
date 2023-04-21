@@ -22,7 +22,6 @@ require "includes/data.php";
           <div class="container">
             <div class="circle">
                 <a href="user.php?id=circle">
-                  <i class="fa-solid fa-user fa-3x"></i>
                     <p>users</p>
                     <h3>
                     <?php
@@ -35,7 +34,6 @@ require "includes/data.php";
               </div>
               <div class="square">
                 <a href="user.php?id=square">
-                <i class="fa-solid fa-books fa-3x"></i>
                   <p>books</p>
                   <h3>
                     <?php 
@@ -48,7 +46,6 @@ require "includes/data.php";
               </div>
               <div class="triangle">
                  <a href="user.php?id=triangle">
-                 <i class="fa-solid fa-cart-shopping fa-3x"></i>
                   <p>requests</p>
                   <h3>
                     <?php 
@@ -61,7 +58,6 @@ require "includes/data.php";
                   </a>
               </div>
               <div class="circle">
-              <i class="fa-light fa-hands-holding-dollar"></i>
                 <p>amount</p>
                 <h3>
                 <?php
@@ -75,7 +71,7 @@ require "includes/data.php";
                       }
                       echo $sum;
                   ?>
-                </h3>
+                $</h3>
               </div>
           </div>
         </div>
