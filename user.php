@@ -10,6 +10,27 @@ require "includes/data.php";
     <title>The books</title>
 </head>
 <body>
+
+    <!-- Start Header -->
+  <div class="header">
+    <div class="container">   
+     <div class="links">
+        <span class="icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <ul>
+          <li><a href="administrator.php">Home</a></li>
+          <li><a href="user.php?id=circle">Users</a></li>
+          <li><a href="user.php?id=square">Books</a></li>
+          <li><a href="user.php?id=triangle">requests</a></li>
+          <li><a href="logout.php">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End Header -->
   <?php 
   if ($_GET['id']=='circle') {
     ?>
@@ -148,7 +169,119 @@ if ($_GET['id']=='triangle') {
   <?php
 }
 ?>
-    <style>
+      <style>
+    /* Start Variables */
+    :root {
+      --main-color: #10cab7;
+    --secondary-color: #00FFCA;
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
+    --main-duration: 0.5s;
+  }
+  /* End Variables */
+  body {
+    font-family: "Work Sans", sans-serif;
+  }
+
+ /* Start Header */
+  
+ .header {
+    padding: 9px;
+  }
+  
+  .header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .links ul  {
+    margin-bottom: -15px;
+    list-style: none;
+    display: flex;
+    float: right;
+  }
+  .header .links ul li a {
+    margin: 20px;
+    color: #10cab7;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .header .links ul li a:hover {
+    color: black;
+    transition: var(--main-duration);
+  }
+  @media (max-width: 767px) {
+    
+    .header .links {
+      position: relative;
+      margin-left: 0px;
+      
+    }
+    .header .links:hover .icon span:nth-child(2) {
+      width: 100%;
+    }
+    .header .links .icon {
+      width: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    .header .links .icon span {
+      background-color: #333;
+      margin-bottom: 5px;
+      height: 2px;
+    }
+    .header .links .icon span:first-child {
+      width: 100%;
+    }
+    .header .links .icon span:nth-child(2) {
+      width: 60%;
+      transition: var(--main-duration);
+    }
+    .header .links .icon span:last-child {
+      width: 100%;
+    }
+    .header .links ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: #f6f6f6;
+      position: absolute;
+      right: 0;
+      min-width: 200px;
+      top: calc(100% + 15px);
+      display: none;
+      z-index: 1;
+    }
+    .header .links ul::before {
+      content: "";
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent transparent #f6f6f6 transparent;
+      border-radius: 15px;
+      position: absolute;
+      right: 5px;
+      top: -20px;
+    }
+    .header .links:hover ul {
+      display: block;
+      border-radius: 15px;
+    }
+    .header .links ul li a {
+      display: block;
+      padding: 5px;
+      text-decoration: none;
+      color: #333;
+      transition: var(--main-duration);
+    } 
+    .header .links ul li a:hover {
+      padding-left: 25px;
+    }
+    .header .links ul li:not(:last-child) a {
+      border-bottom: 1px solid #ddd;
+    }
+  }
+
         #red {
             background-color: red;
         }

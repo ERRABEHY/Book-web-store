@@ -1,12 +1,13 @@
-
 <!DOCTYPE html>
-<html>
-     <head>
-         <meta charset="utf-8" /> 
-            <title>start your career</title> 
-    </head>
-    <body>
-        <!-- Start Header -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+</head>
+<body>
+      <!-- Start Header -->
   <div class="header">
     <div class="container">
       <a href="indexe.php"><img decoding="async" class="logo" src="images/booklogo.png" alt="" /></a>
@@ -17,7 +18,7 @@
           <span></span>
         </span>
         <ul>
-            <li><a href="indexe.php">Home</a></li>
+        <li><a href="indexe.php">Home</a></li>
           <li><a href="indexe.php#Product">Product</a></li>
           <li><a href="indexe.php#portfolio">Portfolio</a></li>
           <li><a href="indexe.php#about">About</a></li>
@@ -27,38 +28,38 @@
     </div>
   </div>
   <!-- End Header -->
-       <div class="container-form">
-        <form method="post" action="includes/login-inc.php" id="site"> 
-            <h3>login</h3>
-              <div>
-                   <label for="">User Name:</label>
-                   <input type="text" name="User_Name" placeholder="User Name"  required>
-               </div>
-               <div>
-                   <label for="">Password:</label>
-                   <input type="password" name="Password" placeholder="write 1..2,A..Z,@.#" required>
-               </div>
-               <div class="new">
-                  <div>
-                      <input type="checkbox" id="check">
-                  <label for="check">Remember me </label>
-                  </div>
-                  <div>
-                      <a href="#site">forget my password</a>
-                  </div>
-               </div>
-               <div>
-                <input type="submit"  name ="submit" value="login" id="send">
-                <!-- <input type="reset" value="rest"  id="rest"> -->
-            </div>
-            <div>
-              <p>Don't have an account yet?</p>
-              <a  class="sign" href="signupb.html">signup</a>
-            </div>
-         </form>
-       </div>
-      <style>
-               /* Start Variables */
+  <div class="inp">
+  <form method="post" action="includes/signup-inc.php"> 
+        <h3>Sign Up</h3>
+        <div>
+            <label for="">Enter Your Email:</label>
+            <input type="Email" name="Email" placeholder="@gmail.com" >
+        </div>
+          <div>
+               <label for="">Enter Your Name:</label>
+               <input type="text" name="User_Name" placeholder="User Name" >
+           </div>
+           <div>
+               <label for=""> Create Your Password:</label>
+               <input type="password" name="Password1" id="Password1" placeholder="write 1..2,A..Z,@.#" >
+           </div>
+           <div>
+            <label for=""> Repeat Your Password:</label>
+            <input type="password" name="Password2"  id="Password2" placeholder="write 1..2,A..Z,@.#" >
+           </div>
+           <div>
+            <input type="submit"  name ="submit" value="Sign Up" id="send">
+        </div>
+        <div class="log">
+            <p>have an account already?</p>
+            <a  class="sign" href="loginb.html">login</a>
+          </div>
+     </form>
+  </div>
+   
+     <style>
+        
+  /* Start Variables */
   :root {
     --main-color: #10cab7;
     --secondary-color: #2c4755;
@@ -67,13 +68,23 @@
     --main-duration: 0.5s;
   }
   /* End Variables */
+  /* Start Global Rules */
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     font-family: "Work Sans", sans-serif;
   }
+  
   /* Start Header */
   
    .header {
-    padding: 20px;
+   padding: 20px;
   }
   
   .header .container {
@@ -83,27 +94,17 @@
   }
   .header .logo {
     width: 100px;
-    margin-left: 10px;
+    margin: -10px;
   }
   .header .links ul  {
+    margin-bottom: -15px;
     list-style: none;
-    margin-right: 50px;
     display: flex;
     float: right;
   }
-    .header .links ul p a {
-      padding: 5px;
-      text-decoration: none;
-      color: #10cab7;
-    }
-  .header .links ul .ad:hover {
-    padding: 5px;
-    border: 5px solid aqua ;
-    background-color: aqua ;
-  }
   .header .links ul li a {
+    font-size: 120%;
     margin: 20px;
-    font-size: large;
     color: #10cab7;
     text-decoration: none;
   }
@@ -191,12 +192,12 @@
     }
   }
   /* End Header */
-            body {
+  body {
                 
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 
             }
-            .container-form {
+            .inp {
               margin: 0;
               display: flex;
               justify-content: center;
@@ -207,7 +208,7 @@
               min-height: 90vh;
               font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             }
-            .container-form::before {
+            .inp::before {
               background-image: url(images/bookstore.jpg);
               content: '';
               position: absolute;
@@ -226,66 +227,58 @@
                 padding: 20px 10px 20px 10px ;
                 border: 2px solid black;
             }
-            h3 {
+        form:hover {
+            box-shadow: 3px 3px 3px black;
+        }
+        h3 {
             text-align: center;
-            color: #2c4755;
             font-size: xx-large ;
-            }
-            form:hover {
-                box-shadow: 3px 3px 3px black;
-            }
-            form input:hover {
-                background-color: black;
-                color: white;
-                transition: 0.5s;
-            }
-            form  input {
+            color: #2c4755;
+        }
+        form  input {
             margin: 6px;
-            }
-            .new {
-                margin: 5px 0px  5px  0;
-                display: flex;
-                justify-content: space-between;
-            }
-            #send {
-                   background-color: #2c4755;
-                color: #10cab7;
-                width: 100%;
-                height: 40px;
-                margin: 0px;
-                border: 0px;
-                border-radius: 20px;
-                text-align: center;
-                font-size: x-large ;
-                font-weight: 600;
-            }  
-            #send:hover {
-                background-color: #10cab7;
-                color: #2c4755;
-                box-shadow: 0 0 5px #10cab7,
-                    0 0 25px #10cab7,
-                    0 0 50px #10cab7;
+        }
+        form input:hover {
+            background-color: black;
+            color: white;
+            transition: 0.5s;
+        }
+        #send {
+            background-color: #2c4755;
+             color: #10cab7;
+            width: 100px;
+            height: 40px;
+            border: 0px;
+            border-radius: 18px;
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+        #send:hover {
+        background-color: #10cab7;
+        color: #2c4755;
+        box-shadow: 0 0 5px #10cab7,
+              0 0 25px #10cab7,
+              0 0 50px #10cab7;
      }
-            /* #rest {
-                width: 100px;
-                height: 20px;
-                border-radius: 8px;
-                text-align: center;
-            } */
-            a {
+        p {
+            text-align: center;
+            margin-top: -40px;
+            margin-right: -49px;
+        }
+        a {
                 position: relative;
                 top: 19%;
                 text-decoration: none;
                 color: black;
             }
-            .sign {
-                color: #10cab7;
+        .sign {
                 float: right;
                 font-weight: 900;
                 text-transform: uppercase;
-                margin-top: -34px;
-                margin-right: 30px;
+                color: #10cab7;
+                margin-top: -35px;
+                margin-right: 15px;
             }
-         </style>
-  </body>
+     </style>
+</body>
 </html>

@@ -108,7 +108,6 @@
               </div>          
         </div>
       </div>
-          <!-- End Service -->
       </div>
     </div>
   </div>

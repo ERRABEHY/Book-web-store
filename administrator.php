@@ -15,7 +15,9 @@ require "includes/data.php";
   <!-- Start Header -->
      <div class="header">
         <h1>Dashboard</h1>
-         <h2><?php echo $_SESSION['sessionuser']; ?></h2>
+        <div class="link">
+             <a href="logout.php"><i class="fa-solid fa-right-from-bracket fa-2x"></i></a>
+        </div>
      </div>
   <!-- End Header -->
         <div class="shapes">
@@ -50,9 +52,8 @@ require "includes/data.php";
                   <h3>
                     <?php 
                     $query=mysqli_query($connect,"SELECT COUNT(Product) FROM client_request WHERE boolen=true ");
-                   while ( $row=mysqli_fetch_row($query)) {
+                    $row=mysqli_fetch_row($query);
                     echo $row[0];
-                  }
                     ?>
                   </h3>
                   </a>
@@ -109,7 +110,6 @@ require "includes/data.php";
                     }
                   }
                 ?>
-                
         </tbody>
          </table>
          <a href="user.php?id=square"><p>...</p></a>
@@ -205,15 +205,6 @@ require "includes/data.php";
     --main-duration: 0.5s;
   }
   /* End Variables */
-  /* Start Global Rules */
-  * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
   body {
     font-family: "Work Sans", sans-serif;
   }
@@ -222,9 +213,9 @@ require "includes/data.php";
    .header {
     padding: 9px;
   } 
-  h2 {
-    text-transform: uppercase;
-  }
+.link i {
+  color: var(--main-color);
+ }
   h3 {
     color: black;
     margin: 0 5px ;
@@ -232,15 +223,17 @@ require "includes/data.php";
     text-transform: uppercase;
 
   }
- 
   /* End Header */
  
   .shapes .container {
+    margin: 0px;
     padding: 20px;
-    margin-left: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 10px;
+  }
+  .shapes .container div {
+    margin: auto;
   }
   .shapes .container .circle {
     background-color: var(--secondary-color);

@@ -12,8 +12,6 @@ $sql="SELECT * FROM materiel  WHERE ID = $var";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/370cac0bc0.js" crossorigin="anonymous"></script>
-
     <title><?php echo  $row['Products'] ?></title>
 </head>
 <body>
@@ -61,30 +59,22 @@ $sql="SELECT * FROM materiel  WHERE ID = $var";
                     <h2><?php echo $row['price'] ?>$</h2>
                     <div><label for="nbr"> </label>
                     <input type="number" name="Quantity" id="nbr" value="1" class="number"></div>
-                    <button type="submit" name="add to cart " onclick="addToCart()">Add to card
+                    <button type="submit" name="add to cart "> Add to card
                       </button>
                  </form>
                        <p class="description"><?php echo  $row['features'] ?> Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
                </div>
         </div>
-        </div>
-        <!-- Start Footer -->
-  <div class="footer">&copy; 2021 <span>bookstore</span> All Right Reserved</div>
-  <!-- End Footer -->
-    
-      <!-- end product -->
+    </div>
+        <!-- end product -->
    <?php
    
    }
 
    ?>
-<script>
-     	function addToCart() {
-			if (confirm("Do you want to continue ?")) {
-				window.location.href = "includes/insert_request.php";
-			} 
-		}
-</script>
+ <!-- Start Footer -->
+ <div class="footer">&copy; 2021 <span>bookstore</span> All Right Reserved</div>
+  <!-- End Footer -->
 <style>
     *{
         padding: 0;

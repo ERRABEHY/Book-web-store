@@ -20,10 +20,10 @@
         </span>
         <ul>
           <li><a href="indexe.php">Home</a></li>
-          <li><a href="#Product">Product</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="indexe.php#Product">Product</a></li>
+          <li><a href="indexe.php#portfolio">Portfolio</a></li>
+          <li><a href="indexe.php#about">About</a></li>
+          <li><a href="indexe.php#contact">Contact</a></li>
           <li><a href="logout.php">log out</a></li>
         </ul>
       </div>
@@ -50,11 +50,13 @@
                   $sql="SELECT * FROM  client_request WHERE boolen='false' AND client='$user'";
                   $query=mysqli_query($connect,$sql);
                   $counter=1;
+                  $total=0;
                   while ($row_request=mysqli_fetch_array($query)){
-                    echo $book=$row_request['Product'];
+                    $book=$row_request['Product'];
                     $result=mysqli_query($connect,"SELECT price,Authors FROM materiel WHERE Products='$book'");
                     $row_product=mysqli_fetch_array($result);
                     $sum=$row_product['price']* $row_request['Quantity'];
+                    $total=$total+$sum;
                     ?>
                     <tr>
                       <td><?php echo $counter?></td>
@@ -65,7 +67,7 @@
                       <td>
                         <form action="modifiy.php" method="POST">
                               <input type="hidden" name="Product" value="<?php echo $row_request['Product']; ?>">
-                              <button type="submit" name="delete" >D</button>
+                              <button type="submit" name="delete" id="del">D</button>
                               <button type="submit" name="Valide" >V</button>
                             </form>
                       </td>
@@ -74,6 +76,9 @@
                         $counter++;
                     }
                 ?>
+                <tr id="total">
+                    <td colspan="6">Total :<?php echo $total ?>$</td>
+                </tr>
         </tbody>
     </table>
 </div>
@@ -245,6 +250,12 @@
   text-transform: uppercase;
   font-weight: 600;
 }
+#total {
+  text-align: right;
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-weight: 700;
+}
 table td {
     text-align: center;
     padding: 9px;
@@ -259,6 +270,10 @@ button {
   border: 0px;
   background-color: var(--main-color);
   color: var(--secondary-color);
+}
+#del {
+  color: black;
+  background-color: red;
 }
   </style>
 </body>
