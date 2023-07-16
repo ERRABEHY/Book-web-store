@@ -6,7 +6,7 @@ $Quantity=$_POST['Quantity'];
 $bol=false;
 
 if (!$_SESSION['sessionUser']) {
-    header("location:../signupb.php?error=you-aren't-connect-with-us");
+    header("location:../signupb.html?error=you-aren't-connect-with-us");
 }else{
     $user=$_SESSION['sessionUser'];
 $sql = "SELECT * FROM client_request WHERE Product=? AND  client=?";

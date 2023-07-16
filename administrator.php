@@ -286,7 +286,7 @@ require "includes/data.php";
   border-bottom: 0px;
 }
 .last_books {
-  float: left;
+  float: right;
 }
 a {
   text-decoration: none;
